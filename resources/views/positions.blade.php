@@ -3,7 +3,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-<div class="form-container">
+<div class="container">
     <button onclick="showPositions()">Show Positions</button>
 </div>
 </body>

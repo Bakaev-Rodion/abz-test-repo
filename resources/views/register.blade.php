@@ -3,7 +3,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-<div class="form-container">
+<div class="container">
     <form id="actionForm" action="{{ route('api.v1.register') }}" method="POST" enctype="multipart/form-data">
         <input type="text" name="token" required placeholder="Registration token">
         <input type="text" name="name" required placeholder="Name">
