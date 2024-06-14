@@ -22,16 +22,16 @@ Route::get('/', function () {
 Route::get('/token', [RegistrationTokenController::class, 'getRegistrationToken']);
 Route::get('/register', function(){
     return view('register');
-});
+})->name('register');
 Route::get('/token', function(){
     return view('token');
-});
+})->name('token');
 Route::get('/users', function(){
     return view('users');
-});
+})->name('users');
 Route::get('/users/{id}', function($id){
     return redirect()->route('api.v1.getUser', ['id'=>$id]);
 });
 Route::get('/positions', function(){
     return view('positions');
-});
+})->name('positions');
