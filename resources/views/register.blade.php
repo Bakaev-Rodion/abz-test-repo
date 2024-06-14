@@ -14,4 +14,22 @@
         <button type="submit">Register</button>
     </form>
 </div>
+<script>
+    document.getElementById('actionForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        let formData = new FormData(this);
+        let token = formData.get('token');
+        fetch('{{ route('api.v1.register') }}', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Token': token
+            }
+        })
+            .then(response => response.json())
+            .catch(error => {
+                console.error('Error submitting form:', error);
+            });
+    });
+</script>
 </body>
