@@ -13,6 +13,8 @@
         <input type="file" name="photo" required accept=".jpg,.jpeg">
         <button type="submit">Register</button>
     </form>
+    <div id="userContainer">
+    </div>
 </div>
 <script>
     document.getElementById('actionForm').addEventListener('submit', function(event) {
@@ -27,6 +29,14 @@
             }
         })
             .then(response => response.json())
+            .then(data=>{
+                const userContainer = document.getElementById('userContainer');
+                if(data.success){
+                    userContainer.innerHTML = `<p>Message: ${data.message} <br> User_id: ${data.user_id}</p>`;
+                } else {
+                    userContainer.innerHTML = `<p>Message: ${data.message}</p>`;
+                }
+            })
             .catch(error => {
                 console.error('Error submitting form:', error);
             });

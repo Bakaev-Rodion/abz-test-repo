@@ -30,7 +30,7 @@ Route::get('/users', function(){
     return view('users');
 })->name('users');
 Route::get('/users/{id}', function($id){
-    return redirect()->route('api.v1.getUser', ['id'=>$id]);
+    return view('user', ['id'=>$id]);
 });
 Route::get('/positions', function(){
     return view('positions');
