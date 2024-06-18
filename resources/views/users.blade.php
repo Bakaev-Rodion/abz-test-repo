@@ -34,7 +34,7 @@
     });
 
     function fetchData(page){
-        fetch(`http://abz.loc/api/v1/users?count=${usersPerPage}&page=${page}`, {
+        fetch('{{ route('api.v1.users') }}' + `?count=${usersPerPage}&page=${page}`, {
             method: 'GET',
         })
             .then(response => response.json())
